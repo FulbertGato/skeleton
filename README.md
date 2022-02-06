@@ -30,8 +30,22 @@ $ composer require FulbertGato/SessionManager
 ## Usage
 
 ``` php
-$skeleton = new FulbertGato\SessionManager();
-echo $skeleton->echoPhrase('Hello, League!');
+
+//Setup autoload
+require "vendor\autoload.php"
+
+//creating a brand new sessionManager objet
+$sessionManager= new FulbertGato\SessionManager();
+
+//Set the foo  session variable
+$sessionManager->setSession("foo","bar");
+
+//check if foo variable exist
+
+$fooExist = $sessionManager->keyExist("foo");
+
+//Get  foo session variable
+$foo = $sessionManager->getSession("foo");
 ```
 
 ## Change log
